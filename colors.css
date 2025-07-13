@@ -1,0 +1,14 @@
+:root {
+    /* L'Oréal Brand Colors */
+    --loreal-iconic-black: #000000;
+    --loreal-radiant-white: #FFFFFF;
+    --loreal-passionate-red: #E61E50;
+    --loreal-eternal-gold: #D4AF37;
+    
+    /* Supporting Colors */
+    --loreal-charcoal: #1a1a1a;
+    --loreal-off-white: #F8F8F8;
+    --loreal-deep-red: #C41E3A;
+    --loreal-light-gold: #F4E4BC;
+    --loreal-rose-gold: #E8B4A0;
+    }

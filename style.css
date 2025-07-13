@@ -1,3 +1,90 @@
+html,
+body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+/* —— Responsive Design —— */
+@media (max-width: 600px) {
+  .page-wrapper {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 2vw;
+    box-sizing: border-box;
+  }
+  .site-header {
+    padding-top: 24px;
+  }
+  .site-logo {
+    width: 180px;
+    margin-bottom: 12px;
+  }
+  .site-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .chatbox {
+    margin: 20px 0;
+  }
+  .chat-window {
+    height: 260px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .msg {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  .msg.user,
+  .msg.ai {
+    padding: 6px 10px;
+    border-radius: 12px 12px 0 12px;
+    font-size: 15px;
+  }
+  .chat-form {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+    align-items: stretch;
+  }
+  .chat-form input {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .chat-form button {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .chat-form button .material-icons {
+    font-size: 20px;
+  }
+  .site-footer {
+    margin: 32px 0 20px;
+    font-size: 12px;
+  }
+  .site-footer nav {
+    margin-top: 8px;
+  }
+  .site-footer a {
+    margin: 0 4px;
+    font-size: 13px;
+  }
+}
 /* —— basic reset —— */
 * {
   box-sizing: border-box;
@@ -5,10 +92,19 @@
   padding: 0;
 }
 
+:root {
+  /* Use L'Oréal brand colors from colors.css */
+  --primary-black: var(--loreal-iconic-black);
+  --primary-white: var(--loreal-radiant-white);
+  --accent-red: var(--loreal-passionate-red);
+  --accent-gold: var(--loreal-eternal-gold);
+}
+
 /* —— body + fonts —— */
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
+  color: var(--primary-black);
+  background: var(--primary-white);
   display: flex;
   justify-content: center;
 }
@@ -16,6 +112,7 @@ body {
 .page-wrapper {
   width: 90%;
   max-width: 900px;
+  background: var(--primary-white);
 }
 
 /* header */
@@ -26,8 +123,16 @@ body {
 
 .site-title {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: var(--primary-black);
+  letter-spacing: 1px;
+}
+
+.site-logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 /* chat window */
@@ -37,13 +142,14 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
+  border: 1.5px solid var(--primary-black);
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
-  background: #fafafa;
+  background: var(--primary-white);
   white-space: pre-line;
+  border-radius: 8px;
 }
 
 /* messages */
@@ -53,11 +159,19 @@ body {
 }
 
 .msg.user {
-  color: #000;
+  color: var(--primary-black);
+  background: var(--accent-gold);
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 16px 16px 0 16px;
 }
 
 .msg.ai {
-  color: #666666;
+  color: var(--primary-white);
+  background: var(--accent-red);
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 16px 16px 16px 0;
 }
 
 /* input row */
@@ -70,19 +184,22 @@ body {
 .chat-form input {
   flex: 1;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-black);
   font-size: 18px;
+  background: var(--primary-white);
+  color: var(--primary-black);
+  border-radius: 6px;
 }
 
 .chat-form input:focus {
-  outline: 2px solid #000;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
-  color: #fff;
+  background: var(--accent-red);
+  color: var(--primary-white);
   border: none;
   padding: 12px;
   width: 48px;
@@ -92,6 +209,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: background 0.3s;
+  border-radius: 50%;
 }
 
 .chat-form button .material-icons {
@@ -99,11 +217,12 @@ body {
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: var(--accent-gold);
+  color: var(--primary-black);
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -125,7 +244,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: var(--primary-black);
 }
 
 .site-footer nav {
@@ -134,10 +253,11 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: var(--accent-red);
   text-decoration: none;
+  font-weight: 500;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: var(--accent-gold);
 }

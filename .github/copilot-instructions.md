@@ -8,7 +8,7 @@ We do NOT use npm libraries or Node SDKs to make requests to APIs.
 
 We use `async/await` when fetching data from an API.
 
-We provide the simplest, beginner-friendly code possible.
+We provide the simplest, beginner-friendly code possible unless explicitly requested otherwise.
 
 We do NOT use `export` statements. Instead we link to JS files from `index.html`.
 
